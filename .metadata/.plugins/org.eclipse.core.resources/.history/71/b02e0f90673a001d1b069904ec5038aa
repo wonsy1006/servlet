@@ -1,0 +1,21 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JdbcConection {
+	public Connection getConnection() {
+		Connection con = null;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@DB이름_medium?TNS_ADMIN=지갑폴더경로";
+			String user = "ADMIN";
+			String password = "데이터베이스 계정 비밀번호";
+			con = DriverManager.getConnection(url, user, password);
+			
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+		return con;
+	}
+}

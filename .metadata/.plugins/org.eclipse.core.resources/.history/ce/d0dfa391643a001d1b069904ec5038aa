@@ -1,0 +1,46 @@
+package servlet01.ex02;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/gugu")
+public class GuguServlet extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doHandle(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doHandle(request, response);
+	}
+	
+	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		int num = Integer.parseInt(request.getParameter("time"));
+
+		out.print("<html><body><p>");
+		
+		for(int i = 1; i <= 9; i++) {
+			if(i == 9) {
+				out.print(num + " X " + i + " = " + num * i);
+			} else {
+				out.print(num + " X " + i + " = " + num * i + "<br>");
+			}
+		}
+		
+		out.print("</p></body></html>");
+		
+	}
+	
+
+}

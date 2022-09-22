@@ -1,0 +1,39 @@
+package servlet01.ex02;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/login5")
+public class LoginTestServlet extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doHandle(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doHandle(request, response);
+	}
+	
+	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		String user_id = request.getParameter("user_id");
+		String user_pw = request.getParameter("user_pw");
+		String address = request.getParameter("address");
+		
+		out.print("<html><body>");
+		out.print("<p>Welcome, " + user_id + "</p>");
+		out.print("<p>Address: " + address + "</p>");
+		out.print("</body></html>");
+	}
+
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>LOGIN</title>
+  </head>
+  <body>
+    <h1>LOGIN</h1>
+    <form action="login" method="get" name="formLogin">
+      <label for="user_id">ID</label>
+      <input type="text" id="user_id" name="user_id" /><br />
+      <label for="user_pw">PASSWORD</label>
+      <input type="password" id="user_pw" name="user_pw" /><br />
+      <input type="submit" value="LOGIN" />
+      <input type="reset" value="CANCEL" />
+    </form>
+  </body>
+</html>

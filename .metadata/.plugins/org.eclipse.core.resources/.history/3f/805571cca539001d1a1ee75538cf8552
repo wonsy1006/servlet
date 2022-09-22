@@ -1,0 +1,27 @@
+package servlet01.ex02;
+
+//import java.io.IOException;
+//import jakarta.servlet.ServletConfig;
+//import jakarta.servlet.ServletException;
+//import jakarta.servlet.annotation.WebServlet;
+//import jakarta.servlet.http.HttpServlet;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.*;
+
+@WebServlet("/login2")
+public class LoginServlet2 extends HttpServlet {
+	
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+
+}

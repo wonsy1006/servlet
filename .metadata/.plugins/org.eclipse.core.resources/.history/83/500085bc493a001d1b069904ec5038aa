@@ -1,0 +1,30 @@
+package servlet01.ex02;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/rate")
+public class RateServlet extends HttpServlet {
+	private static float USD_RATE = 1411.30F;
+	private static float JPY_RATE = 972.50F;
+	private static float CNY_RATE = 198.72F;
+	private static float GBP_RATE = 1584.06F;
+	private static float EUR_RATE = 1385.18F;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		String command = request.getParameter("command");
+		String won = request.getParameter("won");
+		String operator = request.getParameter("operator");
+	}
+
+}

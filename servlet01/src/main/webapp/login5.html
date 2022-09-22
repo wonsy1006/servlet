@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+    	function fn_validate() {
+    		const formLogin = document.formLogin;
+    		const user_id = formLogin.user_id.value;
+    		const user_pw = formLogin.user_pw.value;
+    		
+    		if(user_id.length === 0 || user_id === "") {
+    			alert('ID is required. Please write your ID.');
+    		} else if(user_pw.length === 0 || user_pw === "") {
+    			alert('Password is required. Please write your password.');
+    		} else {
+    			formLogin.method = "post";
+    			formLogin.action = "login5";
+    			formLogin.submit();
+    		}
+    	}
+    </script>
+    <title>LOGIN 5</title>
+  </head>
+  <body>
+    <form name="formLogin">
+      <label for="user_id">ID</label>
+      <input type="text" id="user_id" name="user_id" /><br />
+      <label for="user_pw">PASSWORD</label>
+      <input type="password" id="user_pw" name="user_pw" /><br />
+      <input type="hidden" name="address" value="New York">
+      <input type="button" value="LOGIN" onclick="fn_validate()"/>
+      <input type="reset" value="CANCEL" />
+    </form>
+  </body>
+</html>

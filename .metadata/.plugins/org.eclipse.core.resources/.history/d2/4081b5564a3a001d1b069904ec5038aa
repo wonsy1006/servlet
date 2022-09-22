@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exchange Rate Calculator</title>
+  </head>
+  <body>
+    <h1>Exchange Rate Calculator</h1>
+    <form action="rate" name="formCalc" method="get">
+      원화 : <input type="text" name="won" />
+      <select name="operator">
+        <option value="dollar">USD</option>
+        <option value="yen">JPY</option>
+        <option value="wian">CNY</option>
+        <option value="pound">GBP</option>
+        <option value="euro">EUR</option>
+      </select>
+      <input type="hidden" name="command" value="calculate" />
+      <input type="submit" value="exchange" />
+    </form>
+  </body>
+</html>
