@@ -17,8 +17,9 @@ public class MemberDAO {
 	private Statement stmt;
 	
 	// 회원정보 목록
-	public List<MemberVO> listMembers() {
-		List<MemberVO> list = new ArrayList<MemberVO>();
+	public ArrayList<MemberVO> listMembers() {
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		
 		try {
 			connDB();
 			
@@ -40,15 +41,17 @@ public class MemberDAO {
 				vo.setJoinDate(joinDate);
 				
 				list.add(vo);
+				System.out.println("Member_list created");
 			}
-			
+		
 			rs.close();
 			stmt.close();
 			con.close();
 			
 		} catch (Exception e) {
 			System.out.println("Error occured");
-		}
+		} 
+
 		return list;
 	}
 	

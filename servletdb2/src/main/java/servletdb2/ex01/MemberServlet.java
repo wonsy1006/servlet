@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/member")
@@ -21,11 +22,12 @@ public class MemberServlet extends HttpServlet {
 	}
 
 	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		MemberDAO dao = new MemberDAO(); // sql문으로 조회할 MemberDAO 객체 생성
 		
-		List<MemberVO> list = dao.listMembers();
+		ArrayList <MemberVO> list = dao.listMembers();
 		
 		out.print("<html><body><p>");
 		for(int i = 0; i < list.size(); i++) {
